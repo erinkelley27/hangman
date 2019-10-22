@@ -19,6 +19,7 @@ getRandom.addEventListener('click', function (evt) {
     for (let i = 0; i < randomWord.length; i++) {
         let letterBlank = document.createElement('li')
         letterBlank.innerHTML = '_'
+        letterBlank.classList = randomWord[i]
         lettersList.appendChild(letterBlank)
     }
 })
@@ -27,5 +28,14 @@ for (let i = 0; i < keys.length; i++) {
     keys[i].addEventListener('click', function (evt) {
         evt.preventDefault()
         console.log(keys[i].dataset.letter)
+        let blanks = document.querySelectorAll('li')
+        console.log(blanks)
+        for (let j = 0; j < blanks.length; j++) {
+            console.log(blanks[j].className)
+            if (keys[i].dataset.letter === blanks[j].className) {
+                console.log(blanks[j])
+                blanks[j].innerHTML = blanks[j].className
+            }
+        }
     })
 }
