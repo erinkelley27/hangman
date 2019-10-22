@@ -9,6 +9,7 @@ let words = [
 let getRandom = document.querySelector('.get-random')
 console.log(getRandom)
 let lettersList = document.querySelector('.letters-list')
+let wrongList = document.querySelector('.wrong-list')
 let keys = document.querySelectorAll('p')
 
 getRandom.addEventListener('click', function (evt) {
@@ -29,12 +30,11 @@ for (let i = 0; i < keys.length; i++) {
         evt.preventDefault()
         console.log(keys[i].dataset.letter)
         let blanks = document.querySelectorAll('li')
-        console.log(blanks)
         for (let j = 0; j < blanks.length; j++) {
-            console.log(blanks[j].className)
             if (keys[i].dataset.letter === blanks[j].className) {
-                console.log(blanks[j])
-                blanks[j].innerHTML = blanks[j].className
+                blanks[j].innerHTML = keys[i].dataset.letter
+            } else {
+                keys[i].style.color = 'red'
             }
         }
     })
