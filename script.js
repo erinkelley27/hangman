@@ -9,6 +9,7 @@ let words = [
 let getRandom = document.querySelector('.get-random')
 console.log(getRandom)
 let lettersList = document.querySelector('.letters-list')
+let keys = document.querySelectorAll('p')
 
 getRandom.addEventListener('click', function (evt) {
     evt.preventDefault()
@@ -21,3 +22,10 @@ getRandom.addEventListener('click', function (evt) {
         lettersList.appendChild(letterBlank)
     }
 })
+
+for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener('click', function (evt) {
+        evt.preventDefault()
+        console.log(keys[i].dataset.letter)
+    })
+}
