@@ -1,0 +1,11 @@
+.alphabet {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.line-1, .line-2, .line-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
